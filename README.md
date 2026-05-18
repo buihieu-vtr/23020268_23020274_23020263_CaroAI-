@@ -21,9 +21,11 @@ AI trong dự án được xây dựng dựa trên thuật toán **Minimax** đi
 └── README.md      # Tài liệu hướng dẫn sử dụng
 ## :video_game: Hướng Dẫn Chạy Game 
 
+```
 > git clone https://github.com/buihieu-vtr/23020268_23020274_23020263_CaroAI
 > cd 23020268_23020274_23020263_CaroAI
 > python3 play1.py
+```
 
 Các bước thiết lập trò chơi:
 Bước 1 (Chọn thuật toán): Giao diện chính xuất hiện yêu cầu bạn chọn thuật toán cho AI.
