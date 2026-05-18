@@ -3,16 +3,16 @@ import utils1 as utils
 import time  
 DEPTH = 4
 
-# Biến cấu hình toàn cục điều khiển trạng thái cắt tỉa, được thay đổi từ file play1.py
+
 USE_ALPHA_BETA = True  
 
-# BIẾN TOÀN CỤC ĐỂ ĐẾM SỐ TRẠNG THÁI ĐÃ DUYỆT
+
 state_count = 0
 
 
 def minimax(board, depth, alpha, beta, maximizing, current_score=None):
     global state_count
-    state_count += 1  # Tăng số trạng thái mỗi khi hàm minimax được gọi
+    state_count += 1  
 
     if current_score is None:
         score = utils.evaluate_board(board)
@@ -119,7 +119,7 @@ def minimax(board, depth, alpha, beta, maximizing, current_score=None):
 
 def ai_move(board):
     global state_count
-    state_count = 0  # Reset bộ đếm trạng thái trước khi AI tính toán
+    state_count = 0  
     
     # BẮT ĐẦU ĐO THỜI GIAN
     start_time = time.time()
@@ -130,7 +130,7 @@ def ai_move(board):
     end_time = time.time()
     execution_time = end_time - start_time
     
-    # In kết quả chi tiết ra Terminal
+
     algo_name = "Minimax + Alpha-Beta" if USE_ALPHA_BETA else "Minimax Thuần"
     print(f"\n=== LƯỢT ĐI CỦA AI ===")
     print(f"[*] Thuật toán sử dụng : {algo_name}")
