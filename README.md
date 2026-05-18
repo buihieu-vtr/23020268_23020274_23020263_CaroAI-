@@ -15,10 +15,13 @@ AI trong dự án được xây dựng dựa trên thuật toán **Minimax** đi
 'pip install pygame'
 ```
 ## :open_file_folder: Cấu Trúc Thư Mục 
+```
 ├── AI1.py         # Xử lý logic thuật toán Minimax, Alpha-Beta và sắp xếp nước đi (Move Ordering)
 ├── play1.py       # Khởi tạo giao diện Pygame, quản lý trạng thái màn hình và bắt sự kiện chuột
 ├── utils1.py      # Định nghĩa cấu hình bàn cờ, kiểm tra thắng thua và hàm đánh giá (Heuristic Evaluation)
 └── README.md      # Tài liệu hướng dẫn sử dụng
+```
+
 ## :video_game: Hướng Dẫn Chạy Game 
 
 ```
