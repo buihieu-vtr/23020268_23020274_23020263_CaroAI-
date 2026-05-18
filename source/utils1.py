@@ -6,9 +6,6 @@ HUMAN = 1
 AI = -1
 
 
-# =========================
-# BOARD
-# =========================
 def create_board():
     return [[0 for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 
@@ -24,9 +21,6 @@ def board_full(board):
     return True
 
 
-# =========================
-# MOVE GENERATOR
-# =========================
 def get_empty_cells_near(board):
     candidates = set()
     has_piece = False
@@ -48,9 +42,6 @@ def get_empty_cells_near(board):
     return list(candidates)
 
 
-# =========================
-# WIN CHECK
-# =========================
 def check_win(board, player):
     directions = [
         (0, 1),
@@ -80,11 +71,8 @@ def check_win(board, player):
     return False
 
 
-# =========================
-# SCORE (HIỆU CHỈNH ĐỂ TĂNG ĐỘ KHÔN)
-# =========================
 def create_pattern_dict():
-    # Điều chỉnh điểm số lệch hẳn về phía phòng thủ và chặn đứng chuỗi 3 quân của đối thủ
+  
     patterns = {
         (AI, AI, AI, AI): 1000000,
         (HUMAN, HUMAN, HUMAN, HUMAN): -1000000,
@@ -175,10 +163,9 @@ def evaluate_move(board, r, c, player, current_score):
                 line = [board[start_r + dr * i][start_c + dc * i] for i in range(4)]
                 old_local_score += evaluate_line(line)
 
-    # 2. Giả lập đặt quân cờ xuống
+
     board[r][c] = player
 
-    # 3. Tính toán lại điểm số vùng sau khi đặt quân
     for dr, dc in directions:
         for shift in range(4):
             start_r = r - dr * shift
@@ -187,7 +174,6 @@ def evaluate_move(board, r, c, player, current_score):
                 line = [board[start_r + dr * i][start_c + dc * i] for i in range(4)]
                 new_local_score += evaluate_line(line)
 
-    # 4. Trả bàn cờ về trạng thái cũ
-    board[r][c] = EMPTY
+     board[r][c] = EMPTY
 
     return current_score + new_local_score - old_local_score
