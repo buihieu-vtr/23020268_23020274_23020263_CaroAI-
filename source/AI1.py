@@ -1,7 +1,7 @@
 import math
 import utils1 as utils
 import time  
-DEPTH = 3
+DEPTH = 4
 
 # Biến cấu hình toàn cục điều khiển trạng thái cắt tỉa, được thay đổi từ file play1.py
 USE_ALPHA_BETA = True  
