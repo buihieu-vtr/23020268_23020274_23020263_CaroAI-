@@ -174,6 +174,6 @@ def evaluate_move(board, r, c, player, current_score):
                 line = [board[start_r + dr * i][start_c + dc * i] for i in range(4)]
                 new_local_score += evaluate_line(line)
 
-     board[r][c] = EMPTY
+    board[r][c] = EMPTY
 
     return current_score + new_local_score - old_local_score
